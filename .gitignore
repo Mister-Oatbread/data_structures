@@ -1,9 +1,5 @@
 
 
-# exclude everything by default
-*
-
-# explicitly include
-!.gitignore
+build/*
 
 
