@@ -17,8 +17,25 @@ linked_list * new_linked_list() {
 /**
  * This function allows to append a new entry to a linked list
  */
-linked_list_node * add_entry() {
+void add_entry(linked_list * p_linked_list, linked_list_node * p_new_node) {
 
+}
+
+/**
+ * This function allows to append a node to the end of a linked list
+ */
+void append(linked_list * p_linked_list, int content) {
+    // check if list is empty, if not go to end of list
+    linked_list_node * p_current_node;
+    if (p_linked_list->p_first_node != NULL) {
+        p_current_node = p_linked_list->p_first_node;
+        while (p_current_node->p_next_node != NULL) {
+            p_current_node = p_current_node->p_next_node;
+        }
+    } else {
+        p_current_node = p_linked_list;
+    // insert new node into the list
+    linked_list_node * new_node = malloc(sizeof(linked_list_node));
 }
 
 /**
