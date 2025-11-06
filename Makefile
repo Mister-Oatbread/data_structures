@@ -4,7 +4,7 @@
 fullbuild:
 	@echo -e "-> Wiping build directory"
 	@rm -r build/* || true
-	@echo -e "\n-> Setting up CMake"
+	@echo -e "\n-> Setting up build files"
 	@cmake -S . -B build
 	@echo -e "\n-> Compiling project"
 	@cmake --build build

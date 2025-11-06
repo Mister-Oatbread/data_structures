@@ -35,9 +35,9 @@ Since not all developers might be familiar with CMake, here is a quick rundown o
 
 ### Building an executable with CMake
 To build the project, there are three main steps:
-1. defining the project structure -> this sets everything up for compiling, and should be done every time the macroscopic project structure changes
+1. configuring the project -> this generates the build instructions for the project, and should be done every time the macroscopic project structure changes
 2. compiling everything -> this builds the executable, and should be done every time the source code changes
-3. running the executable -> this executes the actual program
+3. running the executable -> this executes the compiled program
 
 A few commands are predefined in the Makefile to streamline the process of obtaining the executable.
 They can be executed in the root directory of this project.
