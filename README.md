@@ -24,6 +24,7 @@ Including this directory at several points will make different data structures a
 ### src
 This directory contains the functionality of the data structures.
 Each data structure has its own folder.
+Header files with private helper functions are also located here.
 
 ### tests
 This directory contains the unit tests in case someone decides to write them.
@@ -34,9 +35,9 @@ Since not all developers might be familiar with CMake, here is a quick rundown o
 
 ### Building an executable with CMake
 To build the project, there are three main steps:
-1. defining the project structure -> this sets everything up for compiling, and should be done every time the macroscopic project structure changes
+1. configuring the project -> this generates the build instructions for the project, and should be done every time the macroscopic project structure changes
 2. compiling everything -> this builds the executable, and should be done every time the source code changes
-3. running the executable -> this executes the actual program
+3. running the executable -> this executes the compiled program
 
 A few commands are predefined in the Makefile to streamline the process of obtaining the executable.
 They can be executed in the root directory of this project.
@@ -57,5 +58,7 @@ To organize different components, every directory contains its own CMakeLists fi
 If there is a new file in the project, it has to be included in the respective CMakeLists file of this folder.
 There should be a line along the lines of `set([..]_SOURCES [..])` where all used files are defined in the following lines.
 Adding the new file there will include it in the compilation process.
+
+![](img/meme1.jpg "")
 
 
