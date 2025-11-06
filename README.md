@@ -59,4 +59,6 @@ If there is a new file in the project, it has to be included in the respective C
 There should be a line along the lines of `set([..]_SOURCES [..])` where all used files are defined in the following lines.
 Adding the new file there will include it in the compilation process.
 
+![](img/meme1.jpg "")
+
 
