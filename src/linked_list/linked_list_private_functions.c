@@ -21,7 +21,8 @@ linked_list_node * get_next_node(const linked_list_node * const p_current_node) 
 }
 
 /**
- * This function returns the entry of the current node
+ * This function returns the entry of the current node.
+ * If the flag "content_is_defined" has been set to false, it will throw an error.
  */
 int get_node_content(const linked_list_node * const p_current_node) {
     if (p_current_node->content_is_defined) {
@@ -33,7 +34,8 @@ int get_node_content(const linked_list_node * const p_current_node) {
 }
 
 /**
- * This function lets you define the content of a node
+ * This function lets you define the content of a node.
+ * It also will set the flag "content_is_defined" to true.
  */
 void set_node_content(linked_list_node * const p_current_node, const int content) {
     p_current_node->content_is_defined = true;

@@ -13,7 +13,11 @@
     typedef struct linked_list_node linked_list_node;
 
     /**
-     * Linked List head that serves as an entry point
+     * Linked List head that serves as an entry point to the linked list.
+     *
+     * While the actual content is contained within the linked list nodes, the linked list
+     * is publically accessible and can be interacted with outside the library.
+     * It should only be initialized using the function "new_linked_list()".
      */
     struct linked_list {
         linked_list_node * p_first_node;
@@ -21,7 +25,14 @@
     };
 
     /**
-     * Linked list node containing data and next element
+     * Linked list node containing data and next node.
+     *
+     * This struct is private and can only be indirectly manipulated using the functions in the public api.
+     * Since we want to store values in the linked list, but not manage its nodes externally, this is a good practice.
+     * Node content may be assigned or null, but one should acquire information on the
+     * state of the content using the boolean "content_is_defined".
+     * Same goes for the pointer to the next node, which may also be null, but should be
+     * requested via "is_final_node".
      */
     struct linked_list_node {
         int node_content;

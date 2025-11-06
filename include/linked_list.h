@@ -14,7 +14,7 @@
     // public functions
     linked_list * new_linked_list(void);
     void append(linked_list * const p_linked_list, const int content);
-    int read_content_at(const linked_list * const p_linked_list, const int index);
+    int read(const linked_list * const p_linked_list, const int index);
 #endif // LINKED_LIST
 
 

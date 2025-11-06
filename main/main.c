@@ -11,7 +11,7 @@
 int main() {
     linked_list * list1 = new_linked_list();
     append(list1, 15);
-    printf("first element: %d\n", read_content_at(list1, 0));
+    printf("first element: %d\n", read(list1, 0));
 
     return 0;
 }
