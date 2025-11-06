@@ -2,22 +2,30 @@
 
 # generate everything and run it
 fullbuild:
-	rm -r build/* || true
-	cmake -S . -B build
-	cmake --build build
-	./build/main/data_structures
+	@echo -e "-> Wiping build directory"
+	@rm -r build/* || true
+	@echo -e "\n-> Setting up CMake"
+	@cmake -S . -B build
+	@echo -e "\n-> Compiling project"
+	@cmake --build build
+	@echo -e "\n-> Running executable"
+	@./build/main/data_structures
 
 # update generated project
 rebuild:
-	cmake --build build
-	./build/main/data_structures
+	@echo -e "-> Compiling project"
+	@cmake --build build
+	@echo -e "\n-> Running executable"
+	@./build/main/data_structures
 
 # delete build directory
 wipe:
-	rm -r build/*
+	@echo -e "-> Wiping build directory"
+	@rm -r build/*
 
 # run main executable
 run:
-	./build/main/data_structures
+	@echo -e "-> Running executable"
+	@./build/main/data_structures
 
 
