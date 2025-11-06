@@ -24,6 +24,7 @@ Including this directory at several points will make different data structures a
 ### src
 This directory contains the functionality of the data structures.
 Each data structure has its own folder.
+Header files with private helper functions are also located here.
 
 ### tests
 This directory contains the unit tests in case someone decides to write them.
