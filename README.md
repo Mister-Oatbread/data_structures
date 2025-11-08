@@ -37,17 +37,17 @@ Since not all developers might be familiar with CMake, here is a quick rundown o
 To build the project, there are three main steps:
 1. configuring the project -> this generates the build instructions for the project, and should be done every time the macroscopic project structure changes
 2. compiling everything -> this builds the executable, and should be done every time the source code changes
-3. running the executable -> this executes the compiled program
+3. running the tests -> make sure everything is working by using (unit) tests
+4. running the executable -> this executes the compiled program
 
 A few commands are predefined in the Makefile to streamline the process of obtaining the executable.
 They can be executed in the root directory of this project.
 
-- `make fullbuild` deletes the contents of the build directory, and executes steps 1. 2. 3. automatically
-- `make rebuild` only executes steps 2. 3.
-- `make run` only executes steps 3.
+- `make fullbuild` deletes the contents of the build directory, and executes steps 1. 2. 3. 4. automatically
+- `make rebuild` only executes steps 2. 4.
+- `make test` only executes step 3.
+- `make run` only executes steps 4.
 - `make wipe` only wipes the build directory clean
-
-Commands for building a test executable have not been included in the Makefile yet.
 
 ### Expanding the project with CMake
 New files have to be included in the CMake infrastructure.
@@ -61,4 +61,9 @@ Adding the new file there will include it in the compilation process.
 
 ![](img/meme1.jpg "")
 
+### Adding tests
+Testing is done with googletest for now.
+CMake will fetch the source code of googletest and compile it together with the main project.
+To add a test, either write a new `TEST(...)` section within an existing file in `tests/`, or create a new `.cc` file in this directory, add it to `tests/CMakeLists.txt` and configure dependencies like linking to the tested code.
+The author reluctantly apologizes for bringing proper C++ testing into this otherwise pure C project.
 
