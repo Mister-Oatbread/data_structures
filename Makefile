@@ -8,8 +8,8 @@ fullbuild:
 	@make wipe
 	@make p_setup
 	@make p_compile
-	@make run
 	@make test
+	@make run
 
 # update generated project
 rebuild:
@@ -42,5 +42,4 @@ p_setup:
 p_compile:
 	@echo -e "\n-> Compiling project"
 	@cmake --build build
-
 
