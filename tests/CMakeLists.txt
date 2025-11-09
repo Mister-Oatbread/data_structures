@@ -21,7 +21,7 @@ add_test(base base_suite)
 set(LINKED_LIST_SUITE_SOURCES
     "linked_list/linked_list_test.c"
 )
-add_executable(linked_list_suite ${BASE_SUITE_SOURCES})
+add_executable(linked_list_suite ${LINKED_LIST_SUITE_SOURCES})
 target_include_directories(linked_list_suite PRIVATE
     ${PROJECT_SOURCE_DIR}/include
 )
