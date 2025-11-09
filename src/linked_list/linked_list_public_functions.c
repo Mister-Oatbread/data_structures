@@ -23,7 +23,7 @@ linked_list * new_linked_list() {
  * If the list is empty, it will add this node to the linked list struct.
  * The appended node will then be the new end of the linked list, and it will be fully set up accordingly.
  */
-void append(linked_list * const p_linked_list, const int content) {
+void linked_list_append(linked_list * const p_linked_list, const int content) {
     // set up the new node
     linked_list_node * p_new_node = malloc(sizeof(linked_list_node));
     p_new_node->node_content = content;
@@ -56,7 +56,7 @@ void append(linked_list * const p_linked_list, const int content) {
  * The index may be out of bounds, which will cause an error to be thrown.
  * The index must be a non negative number
  */
-int read(const linked_list * const p_linked_list, const int index) {
+int linked_list_read(const linked_list * const p_linked_list, const int index) {
     // declare error cases
     int number_of_nodes = p_linked_list->number_of_nodes;
     bool index_outside_bounds = index > (number_of_nodes-1);

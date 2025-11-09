@@ -21,18 +21,22 @@ set(INCLUDE_DIRECTORY
 )
 
 # enable/disable certain parts of compilation
-option(RUN_TESTS "enable tests" OFF)
+option(RUN_TESTS "enable tests" ON)
 
 # external libraries
 # Test library
 if (RUN_TESTS)
+    include(FetchContent)
     FetchContent_Declare(
-        Catch2
-        GIT_REPOSITORY https://github.com/catchorg/Catch2
-        GIT_TAG v3.5.3
-        GIT_SHALLOW TRUE
+        googletest
+        URL https://github.com/google/googletest/archive/6ec14dfd8c409d05fba94e18e3a02df35b874353.zip
+        DOWNLOAD_EXTRACT_TIMESTAMP true
     )
-    FetchContent_MakeAvailable(Catch2)
+    # For Windows: Prevent overriding the parent project's compiler/linker settings
+    set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
+    FetchContent_MakeAvailable(googletest)
+
+    enable_testing()
 endif()
 
 # external cmake files

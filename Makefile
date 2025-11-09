@@ -8,6 +8,7 @@ fullbuild:
 	@make wipe
 	@make p_setup
 	@make p_compile
+	@make test
 	@make run
 
 # update generated project
@@ -25,6 +26,11 @@ run:
 	@echo -e "\n-> Running executable"
 	@./build/main/data_structures
 
+# run tests
+test:
+	@echo -e "\n-> Running tests"
+	@cd build && ctest --output-on-failure
+
 ## PRIVATE
 
 # private function to create build structure
@@ -36,5 +42,4 @@ p_setup:
 p_compile:
 	@echo -e "\n-> Compiling project"
 	@cmake --build build
-
 
