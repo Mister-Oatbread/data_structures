@@ -21,18 +21,12 @@ set(INCLUDE_DIRECTORY
 )
 
 # enable/disable certain parts of compilation
-option(RUN_TESTS "enable tests" OFF)
+option(RUN_TESTS "enable tests" ON)
 
 # external libraries
 # Test library
 if (RUN_TESTS)
-    FetchContent_Declare(
-        Catch2
-        GIT_REPOSITORY https://github.com/catchorg/Catch2
-        GIT_TAG v3.5.3
-        GIT_SHALLOW TRUE
-    )
-    FetchContent_MakeAvailable(Catch2)
+    enable_testing()
 endif()
 
 # external cmake files

@@ -8,6 +8,7 @@ fullbuild:
 	@make wipe
 	@make p_setup
 	@make p_compile
+	@make test
 	@make run
 
 # update generated project
@@ -19,6 +20,12 @@ rebuild:
 wipe:
 	@echo -e "\n-> Wiping build directory"
 	@rm -r build/* || true
+
+# run tests
+test:
+	@echo -e "\n-> Running tests"
+	@cd build && ctest --output-on-failure
+	@cd ../
 
 # run main executable
 run:

@@ -9,11 +9,7 @@ set(SOURCE_FILES
     "main.c"
 )
 
-if (RUN_TESTS)
-    set(SOURCE_NAME "data_structures_test")
-else()
-    set(SOURCE_NAME "data_structures")
-endif()
+set(SOURCE_NAME "data_structures")
 
 add_executable(${SOURCE_NAME} ${SOURCE_FILES})
 
