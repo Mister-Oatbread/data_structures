@@ -14,7 +14,35 @@ linked_list * new_linked_list() {
     linked_list * p_new_linked_list = malloc(sizeof(linked_list));
     p_new_linked_list->p_first_node = NULL;
     p_new_linked_list->number_of_nodes = 0;
+    p_new_linked_list->alive = true;
     return p_new_linked_list;
+}
+
+/**
+ *  This function deletes a given linked list with all of its entries
+ */
+void delete_linked_list(linked_list * const p_linked_list) {
+    check_if_alive(p_linked_list);
+
+    // delete all nodes, but only if list is non empty
+    if (p_linked_list->number_of_nodes > 0) {
+        // setup
+        linked_list_node * p_current_node = p_linked_list->p_first_node;
+        linked_list_node * p_next_node;
+
+        // free nodes until you hit the end
+        while (!p_current_node->is_final_node) {
+            p_next_node = p_current_node->p_next_node;
+            free(p_current_node);
+            p_current_node = p_next_node;
+        }
+        // free last node without getting next node
+        free(p_current_node);
+    }
+    p_linked_list->alive = false;
+
+    // free linked list
+    free(p_linked_list);
 }
 
 /**
@@ -24,6 +52,8 @@ linked_list * new_linked_list() {
  * The appended node will then be the new end of the linked list, and it will be fully set up accordingly.
  */
 void append(linked_list * const p_linked_list, const int content) {
+    check_if_alive(p_linked_list);
+
     // set up the new node
     linked_list_node * p_new_node = malloc(sizeof(linked_list_node));
     p_new_node->node_content = content;
@@ -57,6 +87,8 @@ void append(linked_list * const p_linked_list, const int content) {
  * The index must be a non negative number
  */
 int read(const linked_list * const p_linked_list, const int index) {
+    check_if_alive(p_linked_list);
+
     // declare error cases
     int number_of_nodes = p_linked_list->number_of_nodes;
     bool index_outside_bounds = index > (number_of_nodes-1);
