@@ -48,10 +48,10 @@ void set_node_content(linked_list_node * const p_current_node, const int content
  * If the list is not alive, the program will crash.
  */
 bool check_if_alive(const linked_list * const p_linked_list) {
-    if (p_linked_list->alive) {
+    if (p_linked_list != NULL) {
         return true;
     } else {
-        fprintf(stderr, "Linked list has already been destroyed.");
+        fprintf(stderr, "Linked list has already been destroyed.\n");
         exit(EXIT_FAILURE);
     }
 }

@@ -14,14 +14,13 @@ linked_list * new_linked_list() {
     linked_list * p_new_linked_list = malloc(sizeof(linked_list));
     p_new_linked_list->p_first_node = NULL;
     p_new_linked_list->number_of_nodes = 0;
-    p_new_linked_list->alive = true;
     return p_new_linked_list;
 }
 
 /**
  *  This function deletes a given linked list with all of its entries
  */
-void delete_linked_list(linked_list * const p_linked_list) {
+void delete_linked_list(linked_list * p_linked_list) {
     check_if_alive(p_linked_list);
 
     // delete all nodes, but only if list is non empty
@@ -39,10 +38,10 @@ void delete_linked_list(linked_list * const p_linked_list) {
         // free last node without getting next node
         free(p_current_node);
     }
-    p_linked_list->alive = false;
 
     // free linked list
     free(p_linked_list);
+    p_linked_list = NULL;
 }
 
 /**

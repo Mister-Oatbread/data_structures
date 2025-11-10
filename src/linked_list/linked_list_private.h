@@ -22,7 +22,6 @@
     struct linked_list {
         linked_list_node * p_first_node;
         int number_of_nodes;
-        bool alive;
     };
 
     /**
