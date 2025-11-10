@@ -1,0 +1,8 @@
+stack: stack.o
+    cc stack.o -o stack
+
+stack.o: stack.c
+    cc -c stack.c -o
+
+stack.c:
+    
