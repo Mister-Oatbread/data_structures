@@ -48,6 +48,7 @@ They can be executed in the root directory of this project.
 - `make wipe` only wipes the build directory clean
 
 Commands for building a test executable have not been included in the Makefile yet.
+If you want to speed up the compile process, you can append `-jN` to the `make` call, which will multithread the compile process (N = number of desired threads)
 
 ### Expanding the project with CMake
 New files have to be included in the CMake infrastructure.

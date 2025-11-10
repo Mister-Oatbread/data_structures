@@ -5,16 +5,17 @@ MAKEFLAGS += --no-print-directory
 
 # generate everything and run it
 fullbuild:
-	@make wipe
-	@make p_setup
-	@make p_compile
-	@make test
-	@make run
+	@$(MAKE) wipe
+	@$(MAKE) p_setup
+	@$(MAKE) p_compile
+	@$(MAKE) test
+	@$(MAKE) run
 
 # update generated project
 rebuild:
-	@make p_compile
-	@make run
+	@$(MAKE) p_compile
+	@$(MAKE) test
+	@$(MAKE) run
 
 # delete build directory
 wipe:
@@ -37,11 +38,11 @@ run:
 # private function to create build structure
 p_setup:
 	@echo -e "\n-> Setting up build files"
-	@cmake -S . -B build
+	@c$(MAKE) -S . -B build
 
 # private function to compile
 p_compile:
 	@echo -e "\n-> Compiling project"
-	@cmake --build build
+	@c$(MAKE) --build build
 
 
