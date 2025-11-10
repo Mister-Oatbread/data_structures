@@ -1,8 +1,8 @@
 test: test.o
-    cc test.o -o test
+    gcc test.o -o test
 
 test.o: test.c
-    cc -c test.c -o test.o
+    gcc -c test.c -o test.o
 
 test.c:
     echo "int main(void) {return 0; }"

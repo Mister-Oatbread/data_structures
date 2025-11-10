@@ -3,6 +3,7 @@
 
 int main(void)
 {
-    printf("test succes");
+    printf("test succes \n");
+    printf("Du Hurensohn \n");
     return EXIT_SUCCESS;
 }
