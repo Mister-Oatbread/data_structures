@@ -49,6 +49,9 @@ They can be executed in the root directory of this project.
 - `make run` only executes steps 4.
 - `make wipe` only wipes the build directory clean
 
+Commands for building a test executable have not been included in the Makefile yet.
+If you want to speed up the compile process, you can append `-jN` to the `make` call, which will multithread the compile process (N = number of desired threads)
+
 ### Expanding the project with CMake
 New files have to be included in the CMake infrastructure.
 This section will give a quick explanation of how to perform basic expansions.
@@ -66,4 +69,5 @@ Testing is done with googletest for now.
 CMake will fetch the source code of googletest and compile it together with the main project.
 To add a test, either write a new `TEST(...)` section within an existing file in `tests/`, or create a new `.cc` file in this directory, add it to `tests/CMakeLists.txt` and configure dependencies like linking to the tested code.
 The author reluctantly apologizes for bringing proper C++ testing into this otherwise pure C project.
+
 
