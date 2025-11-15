@@ -15,7 +15,8 @@ int main() {
     append(list1,  8);
     append(list1, 12);
     append(list1,  4);
-    insert(list1, 3, 14);
+    insert(list1,  3, 14);
+    insert(list1,  7, 69);
     printf("first element: %d\n", read(list1, 0));
 
     visualize(list1);

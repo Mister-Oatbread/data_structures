@@ -110,6 +110,13 @@ int read(const linked_list * const p_linked_list, const int index) {
 }
 
 /**
+ * This function returns the number of nodes of a given linked list
+ */
+int get_number_of_nodes(const linked_list * const p_linked_list) {
+    return p_linked_list->number_of_nodes;
+}
+
+/**
  * This function allows you to insert some content at a specific location
  * in the linked list.
  */
@@ -117,14 +124,14 @@ void insert(linked_list * const p_linked_list, const int index, const int conten
     check_if_alive(p_linked_list);
 
     // check if out of bounds
-    if (p_linked_list->number_of_nodes >= index) {
-        fprintf(stderr, "The requested linked list index is out of bounds.");
+    if (p_linked_list->number_of_nodes < index) {
+        fprintf(stderr, "The requested linked list index is out of bounds.\n");
         exit(EXIT_FAILURE);
     }
 
     // go to relevant index
     linked_list_node * p_node_before_index = p_linked_list->p_first_node;
-    for (int counter=0; counter>index-2; counter++) {
+    for (int counter=0; counter<index-1; counter++) {
         p_node_before_index = get_next_node(p_node_before_index);
     }
 
@@ -138,6 +145,8 @@ void insert(linked_list * const p_linked_list, const int index, const int conten
     p_new_node->p_next_node = p_node_before_index->p_next_node;
     p_node_before_index->p_next_node = p_new_node;
     p_node_before_index->is_final_node = false;
+
+    p_linked_list->number_of_nodes++;
 }
 
 /**
@@ -150,6 +159,7 @@ void visualize(const linked_list * const p_linked_list) {
     int max_prints_per_line = 20;
     int current_number_of_prints = 0;
 
+    // print every node content while respecting line breaks
     linked_list_node * p_current_node = p_linked_list->p_first_node;
     do {
         if (p_current_node->content_is_defined) {
@@ -163,11 +173,15 @@ void visualize(const linked_list * const p_linked_list) {
                 printf(" - ");
                 current_number_of_prints++;
             }
-
         } else {
             fprintf(stderr, "The content of this node is not defined\n");
+            exit(EXIT_FAILURE);
         }
     } while (!p_current_node->is_final_node);
+
+    // print one final time
+    printf("%d\n", p_current_node->node_content);
+
 }
 
 

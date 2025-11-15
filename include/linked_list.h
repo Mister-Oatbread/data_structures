@@ -20,6 +20,7 @@ extern "C" {
     void delete_linked_list(linked_list * linked_list);
     void append(linked_list * const p_linked_list, const int content);
     int read(const linked_list * const p_linked_list, const int index);
+    int get_number_of_nodes(const linked_list * const p_linked_list);
     void insert(linked_list * const p_linked_list, const int index, const int content);
     void visualize(const linked_list * const p_linked_list);
 
