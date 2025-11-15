@@ -20,6 +20,8 @@ extern "C" {
     void delete_linked_list(linked_list * linked_list);
     void append(linked_list * const p_linked_list, const int content);
     int read(const linked_list * const p_linked_list, const int index);
+    int get_content_index(const linked_list * const p_linked_list, const int content);
+    bool content_exists(const linked_list * const p_linked_list, const int content);
 
 #endif // LINKED_LIST
 

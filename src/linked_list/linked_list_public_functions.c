@@ -109,4 +109,34 @@ int read(const linked_list * const p_linked_list, const int index) {
     }
 }
 
+/**
+ * This function returns the index of the first node that contains the same content as the parameter content.
+ * If the content was not found the function throws an error.
+*/
+
+int get_content_index(const linked_list * const p_linked_list, const int content){
+    check_if_alive(p_linked_list);
+
+    int index = 0;
+
+    if(find(p_linked_list, content, &index)){
+        return index;
+    }
+    else{
+        fprintf(stderr, "There is no matching content in the list.");
+        exit(EXIT_FAILURE);
+    }
+}
+
+/**
+ * This function checks if a content exists in the list.
+*/
+
+bool content_exists(const linked_list * const p_linked_list, const int content){
+    check_if_alive(p_linked_list);
+
+    int index = 0;
+
+    return(find(p_linked_list, content, &index));
+}
 

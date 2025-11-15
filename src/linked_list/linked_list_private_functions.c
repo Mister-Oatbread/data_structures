@@ -56,4 +56,23 @@ bool check_if_alive(const linked_list * const p_linked_list) {
     }
 }
 
+/**
+ * This function cycles through all nodes and checks if a given content is in the list and saves their index
+ * If no matching content is found the function returns false
+*/
+bool find(const linked_list * const p_linked_list, const int content, int * index){
+    int number_of_nodes = p_linked_list->number_of_nodes;
+    linked_list_node * p_current_node;
+    p_current_node = p_linked_list->p_first_node;
+
+    for (int i=0; i<number_of_nodes-1; i++) { 
+        if(p_current_node->node_content == content){
+            * index = i;
+            return true;
+        }
+        p_current_node = get_next_node(p_current_node);
+    }
+
+    return false;
+}
 
