@@ -22,10 +22,13 @@ extern "C" {
     int read(const linked_list * const p_linked_list, const int index);
     int get_content_index(const linked_list * const p_linked_list, const int content);
     bool content_exists(const linked_list * const p_linked_list, const int content);
+    int get_number_of_nodes(const linked_list * const p_linked_list);
+    void insert(linked_list * const p_linked_list, const int index, const int content);
+    void visualize(const linked_list * const p_linked_list);
 
 #endif // LINKED_LIST
 
+// #ifdef __cplusplus
+// }
 
-#ifdef __cplusplus
-}
-#endif
+
