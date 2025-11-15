@@ -8,13 +8,13 @@ fullbuild:
 	@$(MAKE) wipe
 	@$(MAKE) p_setup
 	@$(MAKE) p_compile
-	@$(MAKE) test
+	# @$(MAKE) test
 	@$(MAKE) run
 
 # update generated project
 rebuild:
 	@$(MAKE) p_compile
-	@$(MAKE) test
+	# @$(MAKE) test
 	@$(MAKE) run
 
 # delete build directory

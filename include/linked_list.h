@@ -25,7 +25,7 @@ extern "C" {
 
 #endif // LINKED_LIST
 
-#ifdef __cplusplus
-}
+// #ifdef __cplusplus
+// }
 
 
