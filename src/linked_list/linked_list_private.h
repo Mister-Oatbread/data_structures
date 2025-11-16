@@ -46,6 +46,7 @@
     int get_node_content(const linked_list_node * const p_current_node);
     void set_node_content(linked_list_node * const p_current_node, const int content);
     bool check_if_alive(const linked_list * const p_linked_list);
+    bool find(const linked_list * const p_linked_list, const int content, int * index);
 #endif // LINKED_LIST_PRIVATE
 
 

@@ -65,7 +65,7 @@ bool find(const linked_list * const p_linked_list, const int content, int * inde
     linked_list_node * p_current_node;
     p_current_node = p_linked_list->p_first_node;
 
-    for (int i=0; i<number_of_nodes-1; i++) { 
+    for (int i=0; i<number_of_nodes-1; i++) {
         if(p_current_node->node_content == content){
             * index = i;
             return true;

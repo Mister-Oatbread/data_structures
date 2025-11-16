@@ -139,6 +139,8 @@ bool content_exists(const linked_list * const p_linked_list, const int content){
 
     return(find(p_linked_list, content, &index));
 }
+
+/**
  * This function returns the number of nodes of a given linked list
  */
 int get_number_of_nodes(const linked_list * const p_linked_list) {
@@ -190,13 +192,14 @@ void visualize(const linked_list * const p_linked_list) {
 
     // print every node content while respecting line breaks
     linked_list_node * p_current_node = p_linked_list->p_first_node;
+    printf("HEAD -> ");
     do {
         if (p_current_node->content_is_defined) {
             printf("%d", p_current_node->node_content);
             p_current_node = get_next_node(p_current_node);
 
             if (current_number_of_prints > max_prints_per_line) {
-                printf("\n");
+                printf("\n        ");
                 current_number_of_prints = 0;
             } else {
                 printf(" - ");

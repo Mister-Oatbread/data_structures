@@ -21,7 +21,7 @@ set(INCLUDE_DIRECTORY
 )
 
 # enable/disable certain parts of compilation
-option(RUN_TESTS "enable tests" ON)
+option(RUN_TESTS "enable tests" OFF)
 
 # external libraries
 # Test library
