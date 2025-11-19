@@ -3,12 +3,13 @@
 
 #include "stack_private.h"
 
- new_stack(char name)
+int new_stack(char name)
 {
-
+    
 }
 
-void main(void)
+int main(void)
 {
+    printf("passt");
     return EXIT_SUCCESS;
 }
